@@ -19,7 +19,7 @@ This Flask app performs sentiment analysis on user-provided movie reviews. It us
 2. Navigate to the project directory:
 
    ```bash
-   cd IMDB_Sentiment_Analysis/SKLearn
+   cd IMDB_Sentiment_Analysis
    ```  
 3. Build the Docker image:
 

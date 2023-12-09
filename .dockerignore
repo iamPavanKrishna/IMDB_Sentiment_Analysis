@@ -1,0 +1,6 @@
+__pycache__
+.dockerignore
+Dockerfile
+Dockerfile-mysql
+env
+.gitignore

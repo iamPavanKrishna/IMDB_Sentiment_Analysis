@@ -1,0 +1,228 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #f1f3f4;
+    font-family: Arial;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+    font-size: 1.6em;
+}
+
+h1{
+    font-size: 5em;
+}
+
+h2{
+    font-size: 3em;
+}
+
+form {
+    font-size: 1.5em;
+}
+
+.container{
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    overflow: auto;
+    background-color: #ffffff;
+    padding: 1.6em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.1em;
+    box-shadow: 0px 0px 11px 3px grey;
+}
+
+.wrap-analysis-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 960px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    padding: 3%
+}
+
+.analysis-form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.error{
+    color: red;
+    font-size: 0.8em;
+}
+
+.logout{
+    color: red;
+    font-size: 1em;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.analysis-form-title{
+    font-size: 3.5em;
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9%;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+styled-table tbody tr:hover {
+    font-weight: bold;
+    color: #009879;
+}
+
+.social-links{
+    display: flex;
+    flex-direction: row;
+    gap: 15%;
+    padding-left: 3%;
+}
+
+.social-linkedin{
+    width: 18px;
+    height: 18px;
+}
+
+.social-github{
+    width: 18px;
+    height: 18px;
+}
+
+.main-footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap-footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media screen and (max-width: 930px) {
+    .mobile-wrap{
+        width: 100%;
+        padding: 108px 130px 33px 95px;
+        flex-direction: column;
+    }.mobile-form{
+        width: 100%;
+        display: contents;
+    }
+    .style-mob{
+        display: none;
+    }
+    .styled-table {
+        font-size: 0.9em;
+    }
+    .styled-table thead tr {
+        font-size: 0.7em;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    h1{
+        font-size: 4.8em;
+    }
+    
+    form{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width:772px) {
+    h1{
+        font-size: 3.8em;
+    }
+}
+
+@media screen and (max-width:625px) {
+    h1{
+        font-size: 3.3em;
+    }
+}
+
+@media screen and (max-width:552px) {
+    h1{
+        font-size: 2.6em;
+    }
+
+    label {
+        font-size: 0.6em;
+    }
+}
+
+@media screen and (max-width:449px) {
+    h1{
+        font-size: 2.1em;
+    }
+}
+
+@media screen and (max-width:375px) {
+    h1{
+        font-size: 1.6em;
+    }
+    
+    label {
+        font-size: 0.6em;
+    }
+}

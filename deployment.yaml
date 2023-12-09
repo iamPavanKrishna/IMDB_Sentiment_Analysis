@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentiment-analysis-flask-deployment
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: sentiment-analysis-flask-app
+  template:
+    metadata:
+      labels:
+        app: sentiment-analysis-flask-app
+    spec:
+      containers:
+      - name: sentiment-analysis-flask-app
+        image: asia-south1-docker.pkg.dev/sentiment-analysis-sklearn/sentiment-analysis-repo/sentiment-analysis-flask-app:latest  
+        ports:
+        - containerPort: 80
+        env:
+        - name: MYSQL_HOST
+          value: "sentiment-analysis-mysql-db-service"
+        - name: MYSQL_USER
+          value: "root"
+        - name: MYSQL_PASSWORD
+          value: "root"
+        - name: MYSQL_DB
+          value: "sentiment_analysis"
+        - name: FLASK_ENV
+          value: "production"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentiment-analysis-mysql-db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sentiment-analysis-mysql-db
+  template:
+    metadata:
+      labels:
+        app: sentiment-analysis-mysql-db
+    spec:
+      containers:
+      - name: sentiment-analysis-mysql-db
+        image: asia-south1-docker.pkg.dev/sentiment-analysis-sklearn/sentiment-analysis-repo/sentiment-analysis-mysql-db:latest  
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "root"
+        - name: MYSQL_DATABASE
+          value: "sentiment_analysis"

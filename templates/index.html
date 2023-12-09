@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sentiment Analysis</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->	
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+    <!--===============================================================================================-->	
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--===============================================================================================-->
+    </head>
+    <body>
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-analysis-form">
+                    <span class="logout" title="Logout">
+                        <a href="/logout"><i class="ri-logout-box-line"></i></a>
+                    </span>
+                    <span class="analysis-form-title">
+                        Sentiment Analysis
+                    </span>
+                    <form action="/predict" method="post" class="analysis-form validate-form">
+                        <div class="wrap-input100 validate-input">
+                            <label for="user_input">Enter your review:</label>
+                            <input class="input100" type="text" id="userInput" name="user_input" required>
+                            <div class="container-login100-form-btn">
+                                <button class="login100-form-btn">
+                                    Predict
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="results">
+                        {% if data%}
+                            <h2>Results</h2>
+                            <table class="styled-table">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Input</th>
+                                        <th>Prediction</th>
+                                        <th>Confidence</th>
+                                        <th>Created At</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for result in data %}
+                                            <tr>
+                                                <td>{{ loop.index }} </td>
+                                                <td>{{ result[1] }}</td>
+                                                <td>{{ result[2] }}</td>
+                                                <td>{{ result[3] }}%</td>
+                                                <td>{{ result[4] }}</td>
+                                                <td><a href="/delete/{{ result[0] }}"><i class="ri-close-line"></i></a></td>
+                                            </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% endif %}
+                    </div>
+                    <div class="main-footer">
+                        <p>Project done by <a href="https://www.linkedin.com/in/iampavankrishna/" target="_blank">Pavan Krishna</a></p>
+                        <div class="wrap-footer">
+                            <p>Connect with me:</p>
+                            <ul class="social-links">
+                                <li><a href="https://www.linkedin.com/in/iampavankrishna/" target="_blank"><img class="social-linkedin" alt="Linkedin_Icon" src="{{ url_for('static', filename='images/icons/linkedin_icon.png') }}"/></a></li>
+                                <li><a href="https://www.github.com/iampavankrishna/" target="_blank"><img class="social-github" alt="Github_Icon" src="{{ url_for('static', filename='images/icons/github_icon.png') }}"/></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        
+    <!--===============================================================================================-->	
+        <script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='vendor/tilt/tilt.jquery.min.js') }}"></script>
+        <script >
+            $('.js-tilt').tilt({
+                scale: 1.1
+            })
+        </script>
+    <!--===============================================================================================-->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    </body>
+</html>

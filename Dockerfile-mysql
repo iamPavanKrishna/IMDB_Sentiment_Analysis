@@ -1,0 +1,11 @@
+# Use the official MySQL image as a parent image
+FROM mysql:latest
+
+# Set the root password
+ENV MYSQL_ROOT_PASSWORD=root
+
+# Create a database
+ENV MYSQL_DATABASE=sentiment_analysis
+
+# When container starts, execute the SQL script
+COPY init.sql /docker-entrypoint-initdb.d/

@@ -80,6 +80,9 @@ def delete(id_data):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
+    if session.get('loggedin', None):
+        # Redirect to the login page if the user is not authenticated
+        return redirect('/')
 
     if request.method == 'POST':
         email = request.form.get('email')

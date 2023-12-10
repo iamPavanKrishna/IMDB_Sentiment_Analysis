@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: sentiment-analysis-flask-app
-        image: asia-south1-docker.pkg.dev/sentiment-analysis-sklearn/sentiment-analysis-repo/sentiment-analysis-flask-app:latest  
+        image: asia-south1-docker.pkg.dev/sentiment-analysis-sklearn/sentiment-analysis-repo/sentiment-analysis-flask-app:v2  
         ports:
         - containerPort: 80
         env:
@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: sentiment-analysis-mysql-db
-        image: asia-south1-docker.pkg.dev/sentiment-analysis-sklearn/sentiment-analysis-repo/sentiment-analysis-mysql-db:latest  
+        image: asia-south1-docker.pkg.dev/sentiment-analysis-sklearn/sentiment-analysis-repo/sentiment-analysis-mysql-db:v1  
         ports:
         - containerPort: 3306
         env:

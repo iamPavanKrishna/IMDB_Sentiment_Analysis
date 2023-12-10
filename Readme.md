@@ -4,6 +4,9 @@
 
 This Flask app performs sentiment analysis on user-provided movie reviews. It uses a machine learning model to predict sentiment and stores the results in a MySQL database.
 
+## Live Demo
+http://34.93.227.66
+
 ## Prerequisites
 
 - Docker: Ensure Docker is installed on your machine. [Install Docker](https://docs.docker.com/get-docker/)
@@ -19,7 +22,7 @@ This Flask app performs sentiment analysis on user-provided movie reviews. It us
 2. Navigate to the project directory:
 
    ```bash
-   cd IMDB_Sentiment_Analysis/SKLearn
+   cd IMDB_Sentiment_Analysis
    ```  
 3. Build the Docker image:
 
